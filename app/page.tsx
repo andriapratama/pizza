@@ -5,10 +5,11 @@ import { ChevronLeft, ChevronRight } from '@/constants/icons';
 import { Pizza1, PizzaList } from '@/constants/pizzas';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
+import CurveText from './components/curve-text';
 
 export default function Home() {
   const [indexActive, setIndexActive] = useState<number>(0);
-  const [rotate, setRotate] = useState<number>(0);
+  const [rotate, setRotate] = useState<number>(90);
   const imageRefs = useRef<any[]>([]);
 
   const handleNext = () => {
@@ -55,21 +56,12 @@ export default function Home() {
 
   return (
     <main className="w-full overflow-hidden bg-black relative h-screen">
-      <svg>
-        <path
-          id="curve"
-          fill="#ffffff"
-          d="M 0 120 C 0 120, 130 40, 260 120"
-        ></path>
-        <text fill="#ffffff" className="text-2xl" textAnchor="middle">
-          <textPath startOffset="50%" href="#curve">
-            Pizza Mozarino
-          </textPath>
-        </text>
-      </svg>
-
-      <text className="text-white">test</text>
-      <div className="absolute w-[60%] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute w-[60%] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2">
+        <CurveText
+          text="Pizza Spices"
+          className="absolute left-0 -rotate-[40deg]"
+        />
+      </div>
       <div className="absolute w-[55%] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2"></div>
       <Image
         src={WaveBg}
