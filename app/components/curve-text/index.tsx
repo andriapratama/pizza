@@ -8,7 +8,7 @@ interface Props {
 
 const CurveText: React.FC<Props> = ({ text, className, isActive }) => {
   return (
-    <svg className={className ? className : ''}>
+    <svg className={`hidden lg:block ${className ? className : ''}`}>
       <path
         id="curve"
         fill="transparent"

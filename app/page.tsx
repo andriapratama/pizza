@@ -162,13 +162,13 @@ export default function Home() {
   ];
 
   return (
-    <main className="w-full overflow-hidden bg-black relative -rig h-screen">
+    <main className="w-full overflow-hidden bg-black relative h-screen">
       <Loading />
 
       <div className="w-full flex justify-center py-[100px] relative">
         {PizzaList.map((pizza, index) => (
           <div
-            className={`absolute left-1/2 -translate-x-1/2 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute px-10 lg:left-1/2 lg:-translate-x-1/2 z-40 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
             key={index}
             ref={(e: any) => (titleRefs.current[index] = e)}
           >
@@ -181,7 +181,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="absolute w-[65vw] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2">
+      <div className="absolute w-[600px] md:w-[800px] lg:w-[65vw] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2">
         <CurveText
           isActive={indexTitle === 0 ? true : false}
           text="Vegetarian"
@@ -210,9 +210,9 @@ export default function Home() {
         />
       </div>
       <div
-        className={`absolute w-[65vw] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] duration-500 ease-in-out transition-all translate-y-1/2 -translate-x-1/2 after:w-6 after:h-6 after:rounded-full after:bg-white after:absolute after:top-0 after:-translate-y-1/2 after:left-1/2 after:-translate-x-1/2 ${dotRotatePosition[indexTitle]}`}
+        className={`absolute w-[300px] lg:w-[65vw] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] duration-500 ease-in-out transition-all translate-y-1/2 -translate-x-1/2 after:w-6 after:h-6 after:rounded-full after:bg-white after:absolute after:top-0 after:-translate-y-1/2 after:left-1/2 after:-translate-x-1/2 hidden lg:block ${dotRotatePosition[indexTitle]}`}
       ></div>
-      <div className="absolute w-[60vw] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute w-[550px] md:w-[750px] lg:w-[60vw] border-2 border-white rounded-full left-1/2 bottom-0 aspect-[1/1] translate-y-1/2 -translate-x-1/2"></div>
       <Image
         src={WaveBg}
         alt="wave bg"
@@ -221,7 +221,7 @@ export default function Home() {
         className="object-contain w-full h-auto absolute -bottom-[100px] left-0"
       />
 
-      <div className="w-[55vw] h-[55vw] left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 absolute rounded-full">
+      <div className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[55vw] lg:h-[55vw] left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 absolute rounded-full">
         {PizzaList.map((pizza, index) => (
           <Image
             key={index}
@@ -240,7 +240,7 @@ export default function Home() {
         alt="chevront-left"
         height="0"
         width="0"
-        className="w-10 h-auto object-contain absolute left-[100px] bottom-[200px] cursor-pointer"
+        className="w-5 md:w-8 lg:w-10 z-40 h-auto object-contain absolute left-[20px] lg:left-[100px] lg:bottom-[200px] cursor-pointer bottom-1/2 translate-y-1/2"
         onClick={() => handlePrev()}
       />
       <Image
@@ -248,7 +248,7 @@ export default function Home() {
         alt="chevront-left"
         height="0"
         width="0"
-        className="w-10 h-auto object-contain absolute right-[100px] cursor-pointer bottom-[200px]"
+        className="w-5 md:w-8 lg:w-10 z-40 h-auto object-contain absolute right-[20px] lg:right-[100px] cursor-pointer lg:bottom-[200px] bottom-1/2 translate-y-1/2"
         onClick={() => handleNext()}
       />
 
@@ -257,7 +257,7 @@ export default function Home() {
         alt="mint"
         width="0"
         height="0"
-        className={`w-[200px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg1[indexTitle]}`}
+        className={`w-[150px] lg:w-[200px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg1[indexTitle]}`}
       />
 
       <Image
@@ -281,7 +281,7 @@ export default function Home() {
         alt="mints"
         width="0"
         height="0"
-        className={`w-[200px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg4[indexTitle]}`}
+        className={`w-[200px] h-auto object-contain absolute duration-300 ease-in-out transition-all hidden lg:block ${bg4[indexTitle]}`}
       />
 
       <Image
@@ -289,7 +289,7 @@ export default function Home() {
         alt="tomato"
         width="0"
         height="0"
-        className={`w-[50px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg5[indexTitle]}`}
+        className={`w-[50px] h-auto object-contain absolute duration-300 ease-in-out transition-all hidden lg:block ${bg5[indexTitle]}`}
       />
 
       <Image
