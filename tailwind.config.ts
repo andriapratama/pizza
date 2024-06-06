@@ -13,14 +13,8 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      keyframes: {
-        rotate: {
-          '0%': { transform: 'rotate(-3deg)' },
-          '100%': { transform: 'rotate(90deg)' },
-        },
-      },
       animation: {
-        rotate: 'rotate 300ms ease-linear',
+        'spin-slow': 'spin 5s linear infinite',
       },
       fontFamily: {
         instrument: 'var(--font-instrument)',

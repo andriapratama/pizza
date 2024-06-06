@@ -3,11 +3,12 @@
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
-import { WaveBg } from '@/constants/backgrounds';
+import { Lime, Mint, Mints, Tomato, WaveBg } from '@/constants/backgrounds';
 import { ChevronLeft, ChevronRight } from '@/constants/icons';
 import { PizzaList } from '@/constants/pizzas';
 
 import CurveText from './components/curve-text';
+import Loading from './components/loading';
 
 export default function Home() {
   const [indexActive, setIndexActive] = useState<number>(1);
@@ -112,8 +113,58 @@ export default function Home() {
     }
   };
 
+  const bg1: string[] = [
+    '-top-10 -left-10 rotate-[120deg]',
+    '-top-5 -left-5 rotate-[45deg]',
+    'top-0 left-0 -rotate-[30deg]',
+    '-top-3 -left-3 rotate-[40deg]',
+    '-top-7 -left-7 rotate-[90deg]',
+  ];
+
+  const bg2: string[] = [
+    'top-[250px] left-[250px] rotate-[180deg]',
+    'top-[260px] left-[260px] rotate-[250deg]',
+    'top-[280px] left-[280px] rotate-[320deg]',
+    'top-[270px] left-[270px] rotate-[380deg]',
+    'top-[260px] left-[260px] rotate-[270deg]',
+  ];
+
+  const bg3: string[] = [
+    'top-[500px] -left-[20px] rotate-[45deg]',
+    'top-[510px] -left-[10px] rotate-[90deg]',
+    'top-[515px] -left-[25px] rotate-[135deg]',
+    'top-[520px] -left-[30px] rotate-[170deg]',
+    'top-[512px] -left-[20px] rotate-[100deg]',
+  ];
+
+  const bg4: string[] = [
+    'top-0 -right-10',
+    'top-2 -right-12 rotate-[45deg]',
+    'top-4 -right-14 rotate-[75deg]',
+    'top-8 -right-20 rotate-[105deg]',
+    'top-5 -right-16 rotate-[55deg]',
+  ];
+
+  const bg5: string[] = [
+    'top-[210px] right-[300px] rotate-[45deg]',
+    'top-[220px] right-[310px] rotate-[95deg]',
+    'top-[230px] right-[320px] rotate-[145deg]',
+    'top-[215px] right-[310px] rotate-[185deg]',
+    'top-[225px] right-[315px] rotate-[95deg]',
+  ];
+
+  const bg6: string[] = [
+    'top-[400px] right-[50px] -rotate-[40deg]',
+    'top-[420px] right-[70px] -rotate-[100deg]',
+    'top-[405px] right-[55px] -rotate-[30deg]',
+    'top-[430px] right-[80px] -rotate-[120deg]',
+    'top-[410px] right-[60px] -rotate-[70deg]',
+  ];
+
   return (
-    <main className="w-full overflow-hidden bg-black relative h-screen">
+    <main className="w-full overflow-hidden bg-black relative -rig h-screen">
+      <Loading />
+
       <div className="w-full flex justify-center py-[100px] relative">
         {PizzaList.map((pizza, index) => (
           <div
@@ -199,6 +250,54 @@ export default function Home() {
         width="0"
         className="w-10 h-auto object-contain absolute right-[100px] cursor-pointer bottom-[200px]"
         onClick={() => handleNext()}
+      />
+
+      <Image
+        src={Mint}
+        alt="mint"
+        width="0"
+        height="0"
+        className={`w-[200px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg1[indexTitle]}`}
+      />
+
+      <Image
+        src={Lime}
+        alt="lime"
+        width="0"
+        height="0"
+        className={`w-[100px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg2[indexTitle]}`}
+      />
+
+      <Image
+        src={Tomato}
+        alt="tomato"
+        width="0"
+        height="0"
+        className={`w-[80px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg3[indexTitle]}`}
+      />
+
+      <Image
+        src={Mints}
+        alt="mints"
+        width="0"
+        height="0"
+        className={`w-[200px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg4[indexTitle]}`}
+      />
+
+      <Image
+        src={Tomato}
+        alt="tomato"
+        width="0"
+        height="0"
+        className={`w-[50px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg5[indexTitle]}`}
+      />
+
+      <Image
+        src={Mint}
+        alt="mints"
+        width="0"
+        height="0"
+        className={`w-[100px] h-auto object-contain absolute duration-300 ease-in-out transition-all ${bg6[indexTitle]}`}
       />
     </main>
   );
